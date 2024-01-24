@@ -7,7 +7,10 @@ export default class Augmentor extends LightningElement {
         this.startCounter = parseInt(event.target.value);
     }
 
-    handleMaximizeCounter() {
-        this.template.querySelector('c-numerator').maximizeCounter();
+    handleMaximizeCounter(event) {
+        const maximize = event.target.dataset.maximize;
+        this.template.querySelector('c-numerator').maximizeCounter(
+            new CustomEvent('maximize', { detail: maximize })
+        );
     }
 }
