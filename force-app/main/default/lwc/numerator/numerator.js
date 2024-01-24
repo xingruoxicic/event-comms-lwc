@@ -1,7 +1,13 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, api } from 'lwc';
 
 export default class Numerator extends LightningElement {
-    counter = 0;
+    @api counter = 0;
+
+
+    @api
+    maximizeCounter() {
+        this.counter += 1000000;
+    }
     
     handleIncrement() {
         this.counter++;
